@@ -1,0 +1,166 @@
+body {
+    font-family: 'Roboto', Arial, sans-serif; /* Updated font for better readability */
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    color: #fff;
+    animation: backgroundAnimation 10s infinite alternate;
+    line-height: 1.6;
+    font-size: 16px; /* Base font size for better scaling on mobile */
+}
+
+.container {
+    max-width: 90%; /* Adjusted for smaller screens */
+    margin: 20px auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 1s ease-in-out;
+    width: 100%; /* Ensure the container takes full width on smaller screens */
+    box-sizing: border-box; /* Include padding and border in width calculation */
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    animation: fadeIn 1.5s ease-in-out;
+    font-size: 2rem; /* Adjusted font size for better scaling */
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Add consistent spacing between form elements */
+}
+
+label {
+    margin: 10px 0 5px;
+    color: #555;
+}
+
+input, textarea, select, button {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    font-size: 1rem; /* Ensure consistent font size across devices */
+    width: 100%; /* Ensure inputs take full width on smaller screens */
+    box-sizing: border-box; /* Include padding and border in width calculation */
+}
+
+input:focus, textarea:focus, select:focus {
+    border-color: #007BFF;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#feedbackDisplay {
+    margin-top: 20px;
+    padding: 10px;
+    background: #e9ecef;
+    border-radius: 4px;
+    color: #333;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.star-rating {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between; /* Spread stars evenly on smaller screens */
+    margin-bottom: 15px;
+    cursor: pointer;
+}
+
+.star-rating span {
+    font-size: 1.5rem; /* Adjusted star size for better visibility on smaller screens */
+    color: #ccc;
+    transition: color 0.3s ease;
+}
+
+.star-rating span:hover,
+.star-rating span:hover ~ span {
+    color: #ffcc00;
+}
+
+star-rating span.selected,
+.star-rating span.selected ~ span {
+    color: #ffcc00;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes backgroundAnimation {
+    from {
+        background: linear-gradient(135deg, #6a11cb, #2575fc);
+    }
+    to {
+        background: linear-gradient(135deg, #2575fc, #6a11cb);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+        margin: 10px auto; /* Reduce margin for smaller screens */
+    }
+
+    h1 {
+        font-size: 1.8rem;
+        text-align: center; /* Ensure the title is centered */
+    }
+
+    input, textarea, select, button {
+        font-size: 0.9rem;
+        padding: 8px; /* Adjust padding for smaller screens */
+    }
+
+    .star-rating span {
+        font-size: 1.2rem;
+        font-size: 1.3rem; /* Slightly smaller stars for medium screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 10px; /* Reduce padding for very small screens */
+    }
+
+    h1 {
+        font-size: 1.5rem;
+        font-size: 1.4rem; /* Adjust title size for very small screens */
+    }
+
+    input, textarea, select, button {
+        font-size: 0.8rem;
+        font-size: 0.85rem; /* Adjust font size for very small screens */
+        padding: 6px; /* Reduce padding for very small screens */
+    }
+
+    .star-rating span {
+        font-size: 1rem;
+    }
+}

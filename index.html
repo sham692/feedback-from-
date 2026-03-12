@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Form</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> <!-- SweetAlert2 -->
+</head>
+<body>
+    <div class="container">
+        <h1 class="fade-in">Feedback Form</h1>
+        <form id="feedbackForm" class="slide-in">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="gender">Gender:</label>
+            <select id="gender" name="gender" required>
+                <option value="">Select Gender</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+            </select>
+            
+            <label for="rating">Rating:</label>
+            <div class="star-rating">
+                <span data-value="5">&#9733;</span>
+                <span data-value="4">&#9733;</span>
+                <span data-value="3">&#9733;</span>
+                <span data-value="2">&#9733;</span>
+                <span data-value="1">&#9733;</span>
+            </div>
+            <input type="hidden" id="rating" name="rating" required>
+            
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+            
+            <button type="submit">Submit</button>
+        </form>
+        <div id="feedbackDisplay" class="fade-in"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
